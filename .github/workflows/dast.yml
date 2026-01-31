@@ -25,12 +25,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build JAR
-        run: |
-          if [ -f mvnw ]; then
-            ./mvnw clean package -DskipTests
-          else
-            mvn clean package -DskipTests
-          fi
+        run: mvn clean package -DskipTests
 
       - name: Start application in background
         run: |
